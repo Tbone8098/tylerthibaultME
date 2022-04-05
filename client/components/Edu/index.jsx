@@ -44,8 +44,16 @@ export default function Index() {
                         }
                     </ul>
                     <div className='grid grid-cols-2 my-5'>
-                        <div className='justify-self-center'>
-                            <img src={activeEdu.icon} alt={activeEdu.iconAlt} width="300" />
+                        <div className='justify-self-center flex'>
+                            {
+                                activeEdu.icon.map((item, key) => {
+                                    return (
+                                        <div className='flex items-center'>
+                                            <img key={key} src={item} alt='' style={{'max-height': '250px'}} />
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
                         <div className='self-center  px-3'>
                             <p className=''>{activeEdu.description}</p>

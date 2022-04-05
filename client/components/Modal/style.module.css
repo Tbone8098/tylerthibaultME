@@ -8,6 +8,7 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
 }
 
 .container {
@@ -18,5 +19,5 @@
     height: fit-content;
     border-radius: 1em;
     background-color: white;
-    overflow: scroll;
+    overflow-y: scroll;
 }

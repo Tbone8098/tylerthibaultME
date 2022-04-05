@@ -37,8 +37,8 @@ export default function Index() {
                             <img className='border-2 border-black rounded-lg shadow-lg shadow-black' src="img/thinkingMe.jpg" alt="" />
                         </div>
                         <div className='flex justify-center gap-3 mt-3'>
-                            <button className={cx(Utils.btn, 'bg-me-accent')}>Let's Talk</button>
-                            <button className={cx(Utils.btn, 'bg-white')}>Resume</button>
+                            <a href="#contact_me" className={cx(Utils.btn, 'bg-me-accent font-bold')}>Let's Talk</a>
+                            <button className={cx(Utils.btn, 'bg-white font-bold')}>Resume</button>
                         </div>
                     </div>
                 </div>

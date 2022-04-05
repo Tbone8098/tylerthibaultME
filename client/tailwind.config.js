@@ -11,7 +11,7 @@ module.exports = {
         'me-accent': '#FF7511',
       },
       fontFamily: {
-        'me-saira': ['Saira Stencil One'],
+        'me-saira': ['Saira Stencil One', 'sans-serif'],
         'me-sawarabi': ['Sawarabi Gothic', 'sans-serif']
       }
     },

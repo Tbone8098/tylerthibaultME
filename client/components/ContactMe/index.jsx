@@ -51,7 +51,8 @@ export default function Index() {
         
     }
     return (
-        <div className='flex flex-col items-center relative'>
+        <div className='flex flex-col items-center relative' id='contact_me'>
+            <p className='text-white my-3 bg-me-accent p-3 rounded-lg text-xl'>This section is currently in development. If you would like to contact me you can email me at <span className='font-bold'>tyler.thibault@protonmail.com</span></p>
             <h2 className='font-me-saira text-6xl text-white'>Contact Me</h2>
             <form className='grid grid-cols-2 gap-3 w-7/12'>
                 <div className=''>

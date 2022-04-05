@@ -38,7 +38,7 @@ export default function Index() {
                         </div>
                         <div className='flex justify-center gap-3 mt-3'>
                             <a href="#contact_me" className={cx(Utils.btn, 'bg-me-accent font-bold')}>Let's Talk</a>
-                            <button className={cx(Utils.btn, 'bg-white font-bold')}>Resume</button>
+                            <a href='https://docs.google.com/document/d/1ZRIBsqjAE5r1NFZkgL2sc_7lBOcqxr7mUmlHU4M3H3Y/edit?usp=sharing' target="_blank" className={cx(Utils.btn, 'bg-white font-bold')}>Resume</a>
                         </div>
                     </div>
                 </div>

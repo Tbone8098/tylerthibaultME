@@ -1,0 +1,22 @@
+.line_one {
+    position: absolute;
+    background-color: white;
+    top: 0;
+    @apply left-5 lg:left-10 ;
+    width: 0.5em;
+    height: 15em;
+    border-radius: 0 0 0.2em 0.2em ;
+}
+
+.line_one_icons {
+    position: absolute;
+    top: 16em;
+    @apply left-2 lg:left-7 ;
+}
+
+.line_two_icons {
+    position: absolute;
+    /* bottom: 29em; */
+    @apply -rotate-90 -right-36 bottom-44 text-xs sm:text-base sm:-right-60 sm:bottom-64 md:bottom-64 lg:bottom-64 lg:-right-60 ;
+    letter-spacing: 0.5em;
+}

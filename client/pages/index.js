@@ -13,10 +13,10 @@ export default function Home() {
       </Head>
 
       <main className='bg-me-secondary min-h-screen'>
-        <div className='block sm:hidden'>
-          <Menu />
-        </div>
         <MainCard />
+        {/* <div className='invisible sticky top-0 visible'>
+          <Menu />
+        </div> */}
         <Tech />
         <WorkExp />
         <Edu />

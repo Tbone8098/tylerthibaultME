@@ -6,6 +6,8 @@ const aboutMe = (
     </>
 )
 
+
+
 const historyText = (
     <>
         <p>
@@ -15,7 +17,7 @@ const historyText = (
             Six months after graduating high school I enlisted in the Navy (2008), which gave me a solid dose of living and working on an aircraft carrier for 8 months at a time and getting to sail around the world. Towards the end of my 5 years in the Navy, I finally won Kendal over and we started dating and got engaged not too long after (2013). I wasn&apos;t overly satisfied with Navy life so when Kendal made me choose between her or the Navy the decision was easy.
         </p>
         <p>
-            I moved back to Indonesia in January of 2014, married my beautiful wife in June, and started an education degree in July at UPH ("University of light and hope" in Indonesian). The International Teachers College at UPH was connected to an American university called Corban University so I was able to get both an Indonesian and American bachelor&apos;s degree in elementary education.
+            I moved back to Indonesia in January of 2014, married my beautiful wife in June, and started an education degree in July at UPH (&quot;University of light and hope&quot; in Indonesian). The International Teachers College at UPH was connected to an American university called Corban University so I was able to get both an Indonesian and American bachelor&apos;s degree in elementary education.
         </p>
         <p>
             After completing my degree I began teaching 4th grade at the school Kendal and I went to as kids, where mine and her parents taught, and where she was already teaching (2017). During these years of going to school and starting my teaching career, our two sons were born, Theophilus and Zebadiah.

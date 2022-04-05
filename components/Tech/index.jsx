@@ -13,7 +13,7 @@ export default function Index() {
                 {
                     data.map((icon, key) => {
                         return (
-                            <div className='bg-slate-500 p-3 rounded-full border-black border-2 shadow shadow-black flex'>
+                            <div key={key} className='bg-slate-500 p-3 rounded-full border-black border-2 shadow shadow-black flex'>
                                 <Image src={icon} alt="" width="45" height='45' />
                             </div>
                         )

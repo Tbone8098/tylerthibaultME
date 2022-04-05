@@ -14,7 +14,7 @@ export default function Index(props) {
                 <div className='m-5'>
                     <div className='flex justify-between items-center sticky mb-3 border-b-2 border-black top-0 bg-white'>
                         <h2 className='text-4xl uppercase '>{title}</h2>
-                        <Image className='cursor-pointer' src={Close} width="35" height='35' onClick={() => onClose()} />
+                        <Image className='cursor-pointer' alt='' src={Close} width="35" height='35' onClick={() => onClose()} />
                     </div>
                     <div className='flex flex-col gap-4'>
                         {content}

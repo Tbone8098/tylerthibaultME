@@ -17,8 +17,8 @@ export default function Index() {
                     <div className={cx(Style.line_one)}>
                     </div>
                     <div className={cx(Style.line_one_icons, 'flex flex-col gap-3')}>
-                        <Image src={GitHubWhite} width="35" height="35" />
-                        <Image src={LinkedIn} width="35" height="35" />
+                        <Image src={GitHubWhite} alt="" width="35" height="35" />
+                        <Image src={LinkedIn} alt="" width="35" height="35" />
                     </div>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 place-items-center py-5 sm:items-center sm:justify-center sm:h-full'>
@@ -37,8 +37,8 @@ export default function Index() {
                             <img className='border-2 border-black rounded-lg shadow-lg shadow-black' src="img/thinkingMe.jpg" alt="" />
                         </div>
                         <div className='flex justify-center gap-3 mt-3'>
-                            <a href="#contact_me" className={cx(Utils.btn, 'bg-me-accent font-bold')}>Let's Talk</a>
-                            <a href='https://docs.google.com/document/d/1ZRIBsqjAE5r1NFZkgL2sc_7lBOcqxr7mUmlHU4M3H3Y/edit?usp=sharing' target="_blank" className={cx(Utils.btn, 'bg-white font-bold')}>Resume</a>
+                            <a href="#contact_me" className={cx(Utils.btn, 'bg-me-accent font-bold')}>Let&apos;s Talk</a>
+                            <a href='https://docs.google.com/document/d/1ZRIBsqjAE5r1NFZkgL2sc_7lBOcqxr7mUmlHU4M3H3Y/edit?usp=sharing' target="_blank" rel="noreferrer" className={cx(Utils.btn, 'bg-white font-bold')}>Resume</a>
                         </div>
                     </div>
                 </div>
@@ -51,3 +51,5 @@ export default function Index() {
         </div>
     )
 }
+
+' 

@@ -25,7 +25,7 @@ export default function Index() {
     }
     return (
         <div className='flex justify-between items-center p-2 bg-white'>
-            <button className={cx(Utils.btn, 'bg-me-accent')}>Let's Talk</button>
+            <button className={cx(Utils.btn, 'bg-me-accent')}>Let&apos;s Talk</button>
             <span onClick={() => setShowing(true)}>Menu</span>
             {
                 showing ?

@@ -38,7 +38,7 @@ export default function Index() {
                     </div>
                 </div>
                 <div className='absolute bottom-0 left-20'>
-                    <Image src={armsCrossedMe} height="300" width="150" />
+                    <Image src={armsCrossedMe} alt="" height="300" width="150" />
                 </div>
             </div>
         )

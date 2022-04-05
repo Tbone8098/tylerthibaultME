@@ -20,7 +20,7 @@ export default function Index() {
                                     {
                                         edu.icon.map((item, key) => {
                                             return (
-                                                <div className='flex items-center' onClick={() => setActiveEdu(edu)}>
+                                                <div key={key} className='flex items-center' onClick={() => setActiveEdu(edu)}>
                                                     <img key={key} src={item} alt='' style={{ 'max-height': '250px' }} />
                                                 </div>
                                             )
@@ -36,8 +36,8 @@ export default function Index() {
                         {
                             activeEdu.icon.map((item, key) => {
                                 return (
-                                    <div className='flex items-center'>
-                                        <img key={key} src={item} alt='' style={{ 'max-height': '100px' }} />
+                                    <div key={key} className='flex items-center'>
+                                        <img src={item} alt='' style={{ 'max-height': '100px' }} />
                                     </div>
                                 )
                             })
@@ -68,7 +68,7 @@ export default function Index() {
                             {
                                 activeEdu.icon.map((item, key) => {
                                     return (
-                                        <div className='flex items-center'>
+                                        <div key={key} className='flex items-center'>
                                             <img key={key} src={item} alt='' style={{ 'max-height': '250px' }} />
                                         </div>
                                     )

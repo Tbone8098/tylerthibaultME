@@ -23,7 +23,7 @@ export default function Index() {
                                     key={key}
                                     initial={{ y: -100, opacity: 0}}
                                     whileInView={{ y: [-100, 0], opacity: 1}}
-                                    transition={{duration: 2, delay: key * 0.3}}
+                                    transition={{duration: 0.7, delay: key * 0.3}}
                                     viewport={{ once: true }}
                                 >
                                     <h3 className='text-2xl text-center mt-0'>{exp.title}</h3>

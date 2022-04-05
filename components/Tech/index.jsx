@@ -18,6 +18,7 @@ export default function Index() {
                             <SvgIcon 
                             text={svg.name}
                             icon={svg.icon}
+key={key}
                             />
                             // <div className='relative'>
                             //     <div className='bg-slate-500 p-3 rounded-full border-black border-2 shadow shadow-black absolute z-10 h-20 w-20 flex justify-center items-center visible hover:invisible'>

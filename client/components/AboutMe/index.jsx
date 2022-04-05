@@ -1,9 +1,12 @@
 import { cx } from '@/lib/utils'
 import React, { useState } from 'react'
+import Image from 'next/image'
 
 import Utils from '@/styles/utils.module.css'
 import { Modal } from '../../components'
 import { historyText, aboutMe } from './data'
+
+import armsCrossedMe from '../../public/img/armsCrossedMe.png'
 
 export default function Index() {
     const [historyModalView, setHistoryModalView] = useState(false)
@@ -17,7 +20,7 @@ export default function Index() {
                 <div className='bg-white flex flex-col gap-3 p-3'>
                     {aboutMe}
                     <div className='flex justify-center'>
-                        <button className={cx(Utils.btn, 'w-fit bg-me-accent')} onClick={() => setHistoryModalView(true)}>My History</button>
+                        <button className={cx(Utils.btn, 'w-fit bg-white text-black')} onClick={() => setHistoryModalView(true)}>My History</button>
                     </div>
                 </div>
             </div>
@@ -26,13 +29,16 @@ export default function Index() {
 
     const desktopView = () => {
         return (
-            <div className='bg-me-primary text-white flex flex-col items-center py-8'>
+            <div className='bg-me-primary text-white flex flex-col items-center py-8 relative'>
                 <h2 className='text-4xl font-me-saira py-3'>About Me</h2>
                 <div className='w-6/12 flex flex-col gap-3'>
                     {aboutMe}
                     <div className='flex justify-center'>
-                        <button className={cx(Utils.btn, 'w-fit bg-me-accent')} onClick={() => setHistoryModalView(true)}>My History</button>
+                        <button className={cx(Utils.btn, 'w-fit bg-white text-black')} onClick={() => setHistoryModalView(true)}>My History</button>
                     </div>
+                </div>
+                <div className='absolute bottom-0 left-20'>
+                    <Image src={armsCrossedMe} height="300" width="150" />
                 </div>
             </div>
         )

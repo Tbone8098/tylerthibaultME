@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-import { Menu, MainCard, WorkExp, Edu, AboutMe, Tech } from '../components'
+import { Menu, MainCard, WorkExp, Edu, AboutMe, Tech, ContactMe } from '../components'
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='bg-me-secondary min-h-screen'>
+      <main className='bg-me-secondary min-h-screen pb-8'>
         <MainCard />
         {/* <div className='invisible sticky top-0 visible'>
           <Menu />
@@ -21,6 +21,7 @@ export default function Home() {
         <WorkExp />
         <Edu />
         <AboutMe />
+        <ContactMe />
       </main>
 
     </div>

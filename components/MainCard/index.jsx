@@ -17,8 +17,12 @@ export default function Index() {
                     <div className={cx(Style.line_one)}>
                     </div>
                     <div className={cx(Style.line_one_icons, 'flex flex-col gap-3')}>
-                        <Image src={GitHubWhite} alt="" width="35" height="35" />
-                        <Image src={LinkedIn} alt="" width="35" height="35" />
+                        <a href="https://github.com/Tbone8098" target='_blank'>
+                            <Image src={GitHubWhite} alt="" width="35" height="35" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/tyler-thibault-a4404178/" target='_blank'>
+                            <Image src={LinkedIn} alt="" width="35" height="35" />
+                        </a>
                     </div>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 place-items-center py-5 sm:items-center sm:justify-center sm:h-full'>

@@ -74,7 +74,7 @@ export default function Index() {
 
                 <button className={cx(Utils.btn, 'bg-me-accent col-span-2 text-white')}>Send</button>
             </form>
-            <div className='hidden lg:inline-block absolute bottom-0 right-24'>
+            <div className='hidden sm:inline-block md:right-12 sm:right-3 absolute bottom-0 lg:right-32 xl:right-60'>
                 <Image src={pointingMe} alt="" width="150" height="300" />
             </div>
         </div>

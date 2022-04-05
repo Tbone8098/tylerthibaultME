@@ -16,13 +16,33 @@ export default function Index() {
                     {
                         data.map((edu, key) => {
                             return (
-                                <img className={cx(activeEdu.name === edu.name && 'border-b-2 border-black', 'pb-2')} key={key} src={edu.icon} alt={edu.iconAlt} width="50" onClick={() => setActiveEdu(edu)} />
+                                <>
+                                    {
+                                        edu.icon.map((item, key) => {
+                                            return (
+                                                <div className='flex items-center' onClick={() => setActiveEdu(edu)}>
+                                                    <img key={key} src={item} alt='' style={{ 'max-height': '250px' }} />
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </>
                             )
                         })
                     }
                 </div>
-                <div className='p-3 bg-white'>
-                    <img className='float-left' src={activeEdu.icon} alt={activeEdu.iconAlt} width="150px" />
+                <div className='p-3 bg-white '>
+                    <div className='float-left mr-3'>
+                        {
+                            activeEdu.icon.map((item, key) => {
+                                return (
+                                    <div className='flex items-center'>
+                                        <img key={key} src={item} alt='' style={{ 'max-height': '100px' }} />
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
                     <p>{activeEdu.description}</p>
                 </div>
             </div>
@@ -49,7 +69,7 @@ export default function Index() {
                                 activeEdu.icon.map((item, key) => {
                                     return (
                                         <div className='flex items-center'>
-                                            <img key={key} src={item} alt='' style={{'max-height': '250px'}} />
+                                            <img key={key} src={item} alt='' style={{ 'max-height': '250px' }} />
                                         </div>
                                     )
                                 })

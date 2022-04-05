@@ -1,79 +1,83 @@
+
 const data = [
+    
     {
-        icon: 'img/tech/ASP.NET.png',
-        iconAlt: 'asp.net'
+        icon:'bxl:python',
+        name: 'python'
     },
     {
-        icon: 'img/tech/AWS.png',
-        iconAlt: 'aws'
+        icon:'bxl:flask',
+        name: 'flask'
     },
     {
-        icon: 'img/tech/Bootstrap.png',
-        iconAlt: 'Bootstrap'
+        icon:'bxl:django',
+        name: 'django'
     },
     {
-        icon: 'img/tech/Csharp.png',
-        iconAlt: 'C#'
+        icon:'bxl:mongodb',
+        name: 'mongodb'
     },
     {
-        icon: 'img/tech/CSS.png',
-        iconAlt: 'CSS'
+        icon:'simple-icons:express',
+        name: 'express'
     },
     {
-        icon: 'img/tech/Django.png',
-        iconAlt: 'Django'
+        icon:'bxl:react',
+        name: 'react'
     },
     {
-        icon: 'img/tech/Express.png',
-        iconAlt: 'Express'
+        icon:'bxl:nodejs',
+        name: 'nodejs'
     },
     {
-        icon: 'img/tech/Flask.png',
-        iconAlt: 'Flask'
+        icon:'bxl:html5',
+        name: 'html5'
     },
     {
-        icon: 'img/tech/GitHub.png',
-        iconAlt: 'GitHub'
+        icon:'bxl:css3',
+        name: 'css3'
     },
     {
-        icon: 'img/tech/Heroku.png',
-        iconAlt: 'Heroku'
+        icon:'bxl:bootstrap',
+        name: 'bootstrap'
     },
     {
-        icon: 'img/tech/HTML5.png',
-        iconAlt: 'HTML5'
+        icon:'bxl:tailwind-css',
+        name: 'tailwind'
     },
     {
-        icon: 'img/tech/Nodejs.png',
-        iconAlt: 'nodejs'
+        icon:'bxl:aws',
+        name: 'aws'
     },
     {
-        icon: 'img/tech/Mongo_db.png',
-        iconAlt: 'Mongo_db'
+        icon:'bxl:heroku',
+        name: 'heroku'
     },
     {
-        icon: 'img/tech/MySQL.png',
-        iconAlt: 'MySQL'
+        icon:'bxl:github',
+        name: 'github'
     },
     {
-        icon: 'img/tech/Postman.png',
-        iconAlt: 'Postman'
+        icon:'simple-icons:mysql',
+        name: 'mysql'
     },
     {
-        icon: 'img/tech/React.png',
-        iconAlt: 'React'
+        icon:'akar-icons:vscode-fill',
+        name: 'vscode'
     },
     {
-        icon: 'img/tech/Tailwind.png',
-        iconAlt: 'Tailwind'
+        icon:'simple-icons:postman',
+        name: 'postman'
     },
     {
-        icon: 'img/tech/VS_Code.png',
-        iconAlt: 'VS_Code'
+        icon:'simple-icons:dotnet',
+        name: 'dotnet'
+    },
+    {
+        icon:'teenyicons:c-sharp-solid',
+        name: 'c-sharp'
     },
 ]
-
-
 
 export {
     data

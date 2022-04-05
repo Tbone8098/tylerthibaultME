@@ -16,9 +16,6 @@ export default function Home() {
 
       <main className='bg-me-secondary min-h-screen pb-8'>
         <MainCard />
-        {/* <div className='invisible sticky top-0 visible'>
-          <Menu />
-        </div> */}
         <Tech />
         <WorkExp />
         <Edu />

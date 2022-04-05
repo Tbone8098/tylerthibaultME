@@ -6,6 +6,7 @@ import AboutMe from './AboutMe'
 import Tech from './Tech'
 import Modal from './Modal'
 import ContactMe from './ContactMe'
+import SvgIcon from './SvgIcon'
 
 
 export {
@@ -17,4 +18,5 @@ export {
     Tech,
     Modal,
     ContactMe,
+    SvgIcon,
 }

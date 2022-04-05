@@ -1,0 +1,16 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Sawarabi+Gothic&display=swap');
+
+.me_saira {
+    font-family: 'Saira Stencil One', cursive;
+}
+.me_sawarabi {
+    font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+
+/* btn */
+.btn {
+    @apply border border-black rounded-lg shadow shadow-black;
+    padding: 0.5em 1em;
+}

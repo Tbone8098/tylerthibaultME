@@ -16,17 +16,11 @@ export default function Index() {
                     data.map((svg, key) => {
                         return (
                             <SvgIcon 
+                            key={key}
                             text={svg.name}
                             icon={svg.icon}
+                            iconStyle='bg-me-primary p-2 rounded-full border-2 border-black shadow-md shadow-black h-20 w-20 flex justify-center items-center'
                             />
-                            // <div className='relative'>
-                            //     <div className='bg-slate-500 p-3 rounded-full border-black border-2 shadow shadow-black absolute z-10 h-20 w-20 flex justify-center items-center visible hover:invisible'>
-                            //         <span className='text-sm text-white'>{svg.name}</span>
-                            //     </div>
-                            //     <div key={key} className='bg-slate-500 p-3 rounded-full border-black border-2 shadow shadow-black flex relative'>
-                            //         <Icon icon={svg.icon} height="50" color='white' />
-                            //     </div>
-                            // </div>
                         )
                     })
                 }

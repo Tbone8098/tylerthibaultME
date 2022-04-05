@@ -1,0 +1,22 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    /* padding: 2em; */
+    width: 90vw;
+    min-height: 10em;
+    max-height: 90vh;
+    height: fit-content;
+    border-radius: 1em;
+    background-color: white;
+    overflow: scroll;
+}

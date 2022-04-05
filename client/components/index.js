@@ -4,6 +4,7 @@ import WorkExp from './WorkExp'
 import Edu from './Edu'
 import AboutMe from './AboutMe'
 import Tech from './Tech'
+import Modal from './Modal'
 
 
 export {
@@ -13,4 +14,5 @@ export {
     Edu,
     AboutMe,
     Tech,
+    Modal,
 }

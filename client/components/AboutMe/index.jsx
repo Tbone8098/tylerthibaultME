@@ -1,11 +1,12 @@
 import { cx } from '@/lib/utils'
-import React from 'react'
+import React, { useState } from 'react'
 
 import Utils from '@/styles/utils.module.css'
-
+import { Modal } from '../../components'
 import { historyText, aboutMe } from './data'
 
 export default function Index() {
+    const [historyModalView, setHistoryModalView] = useState(false)
 
     const mobileView = () => {
         return (
@@ -15,6 +16,9 @@ export default function Index() {
                 </div>
                 <div className='bg-white flex flex-col gap-3 p-3'>
                     {aboutMe}
+                    <div className='flex justify-center'>
+                        <button className={cx(Utils.btn, 'w-fit bg-me-accent')} onClick={() => setHistoryModalView(true)}>My History</button>
+                    </div>
                 </div>
             </div>
         )
@@ -27,15 +31,25 @@ export default function Index() {
                 <div className='w-6/12 flex flex-col gap-3'>
                     {aboutMe}
                     <div className='flex justify-center'>
-                        <button className={cx(Utils.btn, 'w-fit bg-me-accent')}>My History</button>
+                        <button className={cx(Utils.btn, 'w-fit bg-me-accent')} onClick={() => setHistoryModalView(true)}>My History</button>
                     </div>
                 </div>
             </div>
         )
     }
 
+    const historyModal = () => {
+        return (
+            <>
+                {historyText}
+            </>
+        )
+    }
+
     return (
         <div className='mt-8'>
+            {historyModalView && <Modal content={historyModal()} onClose={() => setHistoryModalView(false)} title="My History" />}
+
             <div className='sm:hidden'>
                 {mobileView()}
             </div>

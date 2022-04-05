@@ -1,4 +1,4 @@
-import { cx } from '@/lib/utils'
+import { cx, motion } from '@/lib/utils'
 import React from 'react'
 import Image from 'next/image'
 
@@ -11,7 +11,12 @@ import LinkedIn from '../../public/img/tech/linkedIn.png'
 
 export default function Index() {
     return (
-        <div className='bg-me-secondary sm:h-screen sm:flex sm:items-center sm:justify-center'>
+        <motion.div
+            className='bg-me-secondary sm:h-screen sm:flex sm:items-center sm:justify-center'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ ease: "easeIn", duration: 2 }}
+        >
             <div className='bg-me-primary p-2 rounded-lg shadow-lg shadow-black sm:w-9/12 sm:h-5/6 sm:rounded-3xl relative'>
                 <div className='flex flex-col'>
                     <div className={cx(Style.line_one)}>
@@ -52,6 +57,6 @@ export default function Index() {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }

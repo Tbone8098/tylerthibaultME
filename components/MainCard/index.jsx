@@ -17,10 +17,10 @@ export default function Index() {
                     <div className={cx(Style.line_one)}>
                     </div>
                     <div className={cx(Style.line_one_icons, 'flex flex-col gap-3')}>
-                        <a href="https://github.com/Tbone8098" target='_blank'>
+                        <a href="https://github.com/Tbone8098" target='_blank' rel="noreferrer">
                             <Image src={GitHubWhite} alt="" width="35" height="35" />
                         </a>
-                        <a href="https://www.linkedin.com/in/tyler-thibault-a4404178/" target='_blank'>
+                        <a href="https://www.linkedin.com/in/tyler-thibault-a4404178/" target='_blank' rel="noreferrer">
                             <Image src={LinkedIn} alt="" width="35" height="35" />
                         </a>
                     </div>

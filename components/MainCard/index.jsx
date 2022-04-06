@@ -123,8 +123,7 @@ export default function Index() {
                     </motion.div>
                 </motion.div>
             }
-        
-        }
+    
         </>
 
     )

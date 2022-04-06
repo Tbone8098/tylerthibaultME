@@ -11,7 +11,8 @@ import LinkedIn from '../../public/img/tech/linkedIn.png'
 
 
 export default function Index() {
-    const [showingPicture, setShowingPicture] = useState(true)
+    const [showingPicture, setShowingPicture] = useState('visible')
+    const [showingHint, setShowingHint] = useState('hidden')
     const [easterEggZindex, setEasterEggZindex] = useState('-z-10')
     const [easterEggPhrase, setEasterEggPhrase] = useState('Bummer that you cannot click on me...I am protected, find somewhere else to click in order to get to me.')
     const [easterEggSheild, setEasterEggSheild] = useState('bg-blue-500 rounded-full p-1')
@@ -21,6 +22,11 @@ export default function Index() {
         setEasterEggZindex('')
         setEasterEggSheild('')
         setEasterEggPhrase("Congrats! you found me!")
+    }
+
+    const phaseOne = () => {
+        setShowingPicture('invisible')
+        setShowingHint('')
     }
 
     return (
@@ -64,21 +70,18 @@ export default function Index() {
                     }
                     <div className=''>
                         <div className='relative' >
-                            {
-                                showingPicture ?
-                                    <div className={cx('lg:hover:animate-bounce z-10')} onClick={() => setShowingPicture(false)}>
+                                    <div className={cx('lg:hover:animate-bounce z-10', showingPicture)} onClick={() => phaseOne()}>
                                         <img className='border-2 border-black rounded-lg shadow-lg shadow-black' src="img/thinkingMe.jpg" alt="" />
                                     </div>
-                                    :
-                                    easterEggSheild ?
-                                        <div className='flex justify-center'>
+                                    { easterEggSheild ?
+                                        <div className={cx('flex justify-center', showingHint)}>
                                             <span className='cursor-pointer underline underline-offset-2' onClick={() => setEasterEggModal(true)}>HINT</span>
                                         </div>
                                         :
                                         <span>Congrats <span className='font-bold underline'>YOU</span> have freed the EGG</span>
-                            }
-                            <div className={cx('absolute bottom-5 cursor-pointer left-20', easterEggZindex)}>
-                                <a href="https://www.google.com">
+                                    }
+                            <div className={cx('absolute bottom-8 cursor-pointer left-20', easterEggZindex)}>
+                                <a href="https://www.google.com" target='_blank' rel='noreferrer'> 
                                     <SvgIcon
                                         icon="mdi:egg-easter"
                                         iconStyle={cx("text-violet-700 float-left", easterEggSheild)}

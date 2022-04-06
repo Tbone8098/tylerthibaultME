@@ -110,7 +110,7 @@ export default function Index() {
                                             <div onClick={() => giveSuprise()}>
                                                 <SvgIcon
                                                     icon="mdi:egg-easter"
-                                                    iconStyle={cx("text-violet-700 float-left", easterEggSheild)}
+                                                    iconStyle={cx("text-violet-700 float-left", easterEgg['easterEggSheild'])}
                                                     iconHeight="50"
                                                 />
                                             </div>

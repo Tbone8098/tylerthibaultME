@@ -42,7 +42,7 @@ export default function Index() {
             msg = ""
         }
         else if (value.length < valLen){
-            msg = 'field is required'
+            msg = 'This field is required'
         }
         setErrorInfo({
             ...errorInfo,
@@ -72,7 +72,7 @@ export default function Index() {
                     <span className='text-red-500 font-bold'>{errorInfo['message']}</span>
                 </div>
 
-                <button className={cx(Utils.btn, 'bg-me-accent col-span-2 text-white')}>Send</button>
+                <button className={cx(Utils.btn, 'bg-gray-400 col-span-2 text-white')} disabled>Send</button>
             </form>
             <div className='hidden sm:inline-block md:right-12 sm:right-3 absolute bottom-0 lg:right-32 xl:right-60'>
                 <Image src={pointingMe} alt="" width="150" height="300" />

@@ -58,7 +58,7 @@ export default function Index() {
                         {
                             data.map((edu, key) => {
                                 return (
-                                    <li className={edu.name === activeEdu.name && 'underline'} key={key} onClick={() => setActiveEdu(edu)}>{edu.name}</li>
+                                    <li className={edu.name === activeEdu.name ? 'text-me-accent' : 'hover:text-white hover:border-gray-400 hover:rounded-xl px-2 hover:border-2 hover:bg-me-primary'} key={key} onClick={() => setActiveEdu(edu)}>{edu.name}</li>
                                 )
                             })
                         }

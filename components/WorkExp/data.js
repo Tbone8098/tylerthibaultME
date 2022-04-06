@@ -6,7 +6,7 @@ const data = [
     },
     {
         title: '2017 - 2020',
-        description: "I taught four grade for three years at SPH (Sekolah Pelita Harapan) after graduating from Universitas Pelita Harapan & Corban University. This was an amazing experience where I learned a lot when it comes to teaching pedagogy.",
+        description: "I taught grade four for three years at SPH (Sekolah Pelita Harapan) after graduating from Universitas Pelita Harapan & Corban University. This was an amazing experience where I learned a lot when it comes to teaching pedagogy.",
         icon: 'img/sphIcon.png'
     },
     {

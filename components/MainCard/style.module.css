@@ -20,3 +20,7 @@
     @apply -rotate-90 -right-36 bottom-44 text-xs sm:text-base sm:-right-60 sm:bottom-64 md:bottom-64 lg:bottom-64 lg:-right-60 ;
     letter-spacing: 0.5em;
 }
+
+.main {
+    z-index: 1;
+}

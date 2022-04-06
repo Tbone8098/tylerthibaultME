@@ -20,4 +20,14 @@
     border-radius: 1em;
     background-color: white;
     overflow-y: scroll;
+    
 }
+
+/* .container::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+} */

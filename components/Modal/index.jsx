@@ -18,7 +18,7 @@ export default function Index(props) {
             transition={{ duration: 0.5}}
             
         >
-            <div className={cx(Style.container)}>
+            <div className={cx(Style.container)} onClick={(e) => e.stopPropagation()}>
                 <div className='m-5'>
                     <div className='flex justify-between items-center sticky mb-3 border-b-2 border-black top-0 bg-white'>
                         <h2 className='text-4xl uppercase '>{title}</h2>

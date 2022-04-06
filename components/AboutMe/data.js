@@ -1,7 +1,7 @@
 const aboutMe = (
     <>
         <p>
-            I am a full stack developer and a tech educator. I have worked a lot in Python with the flask framework as well as the Django framework. I have also spend many hours within the MERN stack and C# with ASP.NET. When it comes to picking a favorite technology suite I think I would have to pick something that works with React at the moment. Nextjs with Prisma as a database and tailwind as a CSS framework is currently my go to. However, I am a life long learner so this is bound to change at some point in the future. I think I have quite an interesting history and if you would like to know more about me and my life you can click the link below or come check out our blog!.
+            I am a full stack developer and a tech educator. I have worked a lot in Python with the flask framework as well as the Django framework. I have also spend many hours within the MERN stack and C# with ASP.NET. When it comes to picking a favorite technology suite I think I would have to pick something that works with React at the moment. Nextjs with Prisma as a database and tailwind as a CSS framework is currently my go to. However, I am a life long learner so this is bound to change at some point in the future. I think I have quite an interesting history and if you would like to know more about me and my life you can click the link below or come check out our blog!
         </p>
     </>
 )
@@ -32,7 +32,7 @@ const historyText = (
             Getting more structured training in the realm of computer languages was the first step in my career change and Coding Dojo was where it happened. I completed the program with a triple black belt, and began Teacher Assisting at the Dojo while enrolled in my second boot camp at University of Washington. This second boot camp gave me the chance to hone in on one language, JavaScript within the framework of React.
         </p>
         <p>
-            After completing these two boot camps, I got hired by Coding Dojo as an Associate Instructor, graduating to a full instructor within my first year. At the same time, my family made another significant transition from living at my parents&apos; to buying a 5th wheel RV and beginning our travels. We have had amazing opportunities so far traveling across the country fulltime, If you want to know more, come check out our blog <a className="text-blue-500 underline" href="http://theadventureawaits.live/" target='_blank' rel="noreferrer">here</a>!.
+            After completing these two boot camps, I got hired by Coding Dojo as an Associate Instructor, graduating to a full instructor within my first year. At the same time, my family made another significant transition from living at my parents&apos; to buying a 5th wheel RV and beginning our travels. We have had amazing opportunities so far traveling across the country fulltime, If you want to know more, come check out our blog <a className="text-blue-500 underline" href="http://theadventureawaits.live/" target='_blank' rel="noreferrer">here</a>!
         </p>
     </>
 )

@@ -22,7 +22,7 @@ export default function Index() {
                         {aboutMe}
                         <div className='flex justify-center gap-5'>
                             <button className={cx(Utils.btn, 'w-fit bg-white text-black')} onClick={() => setHistoryModalView(true)}>My History</button>
-                            <a className={cx(Utils.btn, 'bg-me-secondary')} href="http://theadventureawaits.live/" rel="noreferrer" target="_blank">Our Blog</a>
+                            <a className={cx(Utils.btn, 'bg-me-secondary text-white')} href="http://theadventureawaits.live/" rel="noreferrer" target="_blank">Our Blog</a>
                         </div>
                     </div>
                     <div className='absolute bottom-0 md:left-4 lg:left-20 hidden md:inline-block'>

@@ -24,7 +24,7 @@ export default function Index() {
                                 key={key}
                                 text={svg.name}
                                 icon={svg.icon}
-                                iconStyle='bg-me-primary p-2 rounded-full border-2 border-black shadow-md shadow-black h-20 w-20 flex justify-center items-center'
+                                iconStyle='text-white bg-me-primary p-2 rounded-full border-2 border-black shadow-md shadow-black h-20 w-20 flex justify-center items-center'
                             />
                         )
                     })

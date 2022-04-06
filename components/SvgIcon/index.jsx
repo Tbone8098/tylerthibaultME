@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 
 export default function Index(props) {
     const [showing, setShowing] = useState(true)
-    const { icon, text, textStyle, iconStyle } = props
+    const { icon, text, textStyle, iconStyle, iconHeight='50' } = props
 
 
     return (
@@ -13,13 +13,13 @@ export default function Index(props) {
                     <div className={iconStyle} onMouseEnter={() => setShowing(false)} onMouseLeave={() => setShowing(true)}>
                         {
                             showing ?
-                                <Icon icon={icon} height="50" color="white" />
+                                <Icon icon={icon} height={iconHeight}  />
                                 :
                                 <span className='text-white'>{text}</span>
-                        }
+                            }
                     </div>
                     :
-                    'loading'
+                    <Icon className={iconStyle} icon={icon} height={iconHeight} />
                 }
         </div>
     )

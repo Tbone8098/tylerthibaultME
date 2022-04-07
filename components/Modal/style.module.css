@@ -23,11 +23,11 @@
     
 }
 
-/* .container::-webkit-scrollbar {
+.container::-webkit-scrollbar {
     display: none;
 }
 
 .container {
     -ms-overflow-style: none;
     scrollbar-width: none;
-} */
+}

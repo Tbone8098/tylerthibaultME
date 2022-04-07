@@ -11,12 +11,6 @@ import LinkedIn from '../../public/img/tech/linkedIn.png'
 
 
 export default function Index() {
-    // const [showingPicture, setShowingPicture] = useState('visible')
-    // const [showingHint, setShowingHint] = useState('hidden')
-    // const [easterEggZindex, setEasterEggZindex] = useState('-z-10')
-    // const [easterEggSheild, setEasterEggSheild] = useState('bg-blue-500 rounded-full p-1')
-    // const [easterEggModal, setEasterEggModal] = useState(false)
-    // const [eggClick, setEggClick] = useState(false)
 
     const [easterEgg, setEasterEgg] = useState({
         showingPicture: 'visible',
@@ -27,21 +21,20 @@ export default function Index() {
         eggClick: false
     })
 
+    const changeEggState = (obj) => {
+        setEasterEgg({
+            ...easterEgg,
+            ...obj
+        })
+    }
+
     const easterEggTrigger = () => {
-        if (showingPicture === 'invisible'){
-            setEasterEggZindex('')
-            setEasterEggSheild('')
-            setEasterEggPhrase("Congrats! you found me!")
+        if (easterEgg['showingPicture'] === 'invisible') {
+            changeEggState({
+                Zindex: '',
+                sheild: '',
+            })
         }
-    }
-
-    const phaseOne = () => {
-        setShowingPicture('invisible')
-        setShowingHint('')
-    }
-
-    const giveSuprise = () => {
-        setEggClick(true)
     }
 
     return (
@@ -88,11 +81,14 @@ export default function Index() {
                                 }
                                 <div className=''>
                                     <div className='relative' >
-                                        <div className={cx('lg:hover:animate-bounce z-10', easterEgg['showingPicture'])} onClick={() => phaseOne()}>
+                                        <div className={cx('lg:hover:animate-bounce z-10', easterEgg['showingPicture'])} onClick={() => changeEggState({
+                                            showingPicture: 'invisible',
+                                            showingHint: ''
+                                        })}>
                                             <img className='border-2 border-black rounded-lg shadow-lg shadow-black' src="img/thinkingMe.jpg" alt="" />
                                         </div>
-                                        {easterEgg['easterEggSheild'] ?
-                                            <div className={cx('flex justify-center', showingHint)}>
+                                        {easterEgg['sheild'] ?
+                                            <div className={cx('flex justify-center', easterEgg['showingHint'])}>
                                                 <span className='cursor-pointer underline underline-offset-2' onClick={() => setEasterEggModal(true)}>HINT</span>
                                             </div>
                                             :
@@ -100,17 +96,11 @@ export default function Index() {
                                                 <span>Congrats <span className='font-bold underline'>YOU</span> have freed the EGG</span>
                                             </div>
                                         }
-                                        {/* {
-                                eggClick &&
-                                <div>
-                                    <img className='rounded-full' src="https://th.bing.com/th/id/R.392affaa01eb23ae734f75eff05be055?rik=lq5QgAteknwUXQ&riu=http%3a%2f%2fedit911.com%2fwp-content%2fuploads%2f2015%2f03%2fI-Am-Invincible-GoldenEye.gif%3f4dbbde&ehk=fhHJw2mQ4T9oGlEwNwhkhkeldj8npjw86dxGXW01%2fEA%3d&risl=&pid=ImgRaw&r=0" alt="" />
-                                </div>
-                            } */}
-                                        <div className={cx('absolute bottom-8 cursor-pointer left-20', easterEgg['easterEggZindex'])}>
-                                            <div onClick={() => giveSuprise()}>
+                                        <div className={cx('absolute bottom-8 cursor-pointer left-20', easterEgg['Zindex'])}>
+                                            <div onClick={() => changeEggState({ eggClick: true })}>
                                                 <SvgIcon
                                                     icon="mdi:egg-easter"
-                                                    iconStyle={cx("text-violet-700 float-left", easterEgg['easterEggSheild'])}
+                                                    iconStyle={cx("text-violet-700 float-left", easterEgg['sheild'])}
                                                     iconHeight="50"
                                                 />
                                             </div>

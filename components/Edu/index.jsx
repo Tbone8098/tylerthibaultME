@@ -1,12 +1,22 @@
+import React, { useState, useEffect } from 'react'
 import { cx } from '@/lib/utils'
-import React, { useState } from 'react'
+import Image from 'next/image'
+import { getEgg, setEgg } from 'helpers/egg'
 
 import Utils from '@/styles/utils.module.css'
 
+import { Modal } from '../'
+
 import { data } from './data'
 
-export default function Index() {
+export default function Index(props) {
     const [activeEdu, setActiveEdu] = useState(data[0])
+    const [easterEgg, setEasterEgg] = useState()
+
+    useEffect(() => {
+        let egg = getEgg()
+        setEasterEgg(egg)
+    })
 
     const mobileView = () => {
         return (
@@ -16,17 +26,17 @@ export default function Index() {
                     {
                         data.map((edu, key) => {
                             return (
-                                <>
+                                <div key={key}>
                                     {
-                                        edu.icon.map((item, key) => {
+                                        edu.icon.map((item, key2) => {
                                             return (
-                                                <div key={key} className='flex items-center' onClick={() => setActiveEdu(edu)}>
-                                                    <img key={key} src={item} alt='' style={{ 'max-height': '250px' }} />
+                                                <div key={key2} className='flex items-center' onClick={() => setActiveEdu(edu)}>
+                                                    <img src={item} alt='' style={{ 'maxheight': '250px' }} />
                                                 </div>
                                             )
                                         })
                                     }
-                                </>
+                                </div>
                             )
                         })
                     }
@@ -37,22 +47,45 @@ export default function Index() {
                             activeEdu.icon.map((item, key) => {
                                 return (
                                     <div key={key} className='flex items-center'>
-                                        <img src={item} alt='' style={{ 'max-height': '100px' }} />
+                                        <img src={item} alt='' style={{ 'maxheight': '100px' }} />
                                     </div>
                                 )
                             })
                         }
                     </div>
-                    <p>{activeEdu.description}</p>
+                    {activeEdu.description}
                 </div>
             </div>
         )
     }
 
+    const something = () => {
+        console.log("seomthing");
+    }
+
     const desktopView = () => {
         return (
-            <div className='bg-me-secondary flex items-center justify-center'>
-                <div className='bg-white text-me-secondary text-xl border-me-primary border-8 w-9/12 rounded-3xl shadow-lg shadow-black'>
+            <div className='bg-me-secondary grid grid-cols-12 justify-center'>
+                <div className='col-span-1'>
+                    {easterEgg && easterEgg.eg1 &&
+                        <>
+                            <p className='text-2xl text-yellow-400'>Life</p>
+                        </>
+                    }
+                    {
+                        easterEgg && easterEgg.eg2 &&
+                        <>
+                            <p className='text-2xl text-yellow-400'>Long</p>
+                        </>
+                    }
+                    {
+                        easterEgg && easterEgg.eg3 &&
+                        <>
+                            <p className='text-2xl text-yellow-400'>Learner</p>
+                        </>
+                    }
+                </div>
+                <div className='bg-white col-span-10 flex flex-col w-full text-me-secondary text-xl border-me-primary border-8 rounded-3xl shadow-lg shadow-black'>
                     <h2 className='text-4xl  text-center'>Education</h2>
                     <ul className='flex justify-center gap-5  cursor-pointer'>
                         {
@@ -69,14 +102,16 @@ export default function Index() {
                                 activeEdu.icon.map((item, key) => {
                                     return (
                                         <div key={key} className='flex items-center'>
-                                            <img key={key} src={item} alt='' style={{ 'max-height': '250px' }} />
+                                            <div>
+                                                <Image src={item} width="250" height="250" alt="" />
+                                            </div>
                                         </div>
                                     )
                                 })
                             }
                         </div>
                         <div className='self-center  px-3'>
-                            <p className=''>{activeEdu.description}</p>
+                            {activeEdu.description}
                         </div>
                     </div>
                 </div>

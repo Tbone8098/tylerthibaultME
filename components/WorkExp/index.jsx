@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import { motion } from '@/lib/utils'
+import Image from 'next/image'
 
 import { data } from './data'
 
-export default function Index() {
+export default function Index(props) {
+    const { egg, changeEggState } = props
     const [activeExp, setActiveExp] = useState()
+    const [easterEgg, setEasterEgg] = useState(egg)
 
-    const mobileView = () => {
+    const view = () => {
         return (
             <div>
                 <div className='bg-me-primary py-3 text-white font-me-saira text-3xl text-center mt-8'>
@@ -29,10 +32,11 @@ export default function Index() {
                                     <h3 className='text-2xl text-center mt-0'>{exp.title}</h3>
                                     <div className='grid grid-cols-6 place-items-center mx-3 gap-3 m-auto'>
                                         <div className='col-span-2'>
-                                            <img src={exp.icon} alt={exp.iconAlt} />
+                                            <Image src={exp.icon} alt="" />
+                                            {/* <img src={exp.icon} alt={exp.iconAlt} /> */}
                                         </div>
                                         <div className='col-start-3 col-span-4'>
-                                            <p>{exp.description}</p>
+                                            {exp.description}
                                         </div>
                                     </div>
                                 </motion.div>
@@ -44,20 +48,10 @@ export default function Index() {
         )
     }
 
-    const desktopView = () => {
-        return (
-            <div>
-                <div >
-                    <h2>Work Experience</h2>
-                </div>
-            </div>
-        )
-    }
-
     return (
         <div>
             <div>
-                {mobileView()}
+                {view()}
             </div>
         </div>
     )

@@ -1,12 +1,30 @@
-import React, { useState } from 'react'
-import { motion } from '@/lib/utils'
+import React, { useState, useEffect } from 'react'
+import { cx, motion } from '@/lib/utils'
+import Image from 'next/image'
 
 import { data } from './data'
 
-export default function Index() {
-    const [activeExp, setActiveExp] = useState()
+export default function Index(props) {
+    const { egg, changeEggState } = props
+    const [easterEgg, setEasterEgg] = useState(egg)
+    const [combo, setCombo] = useState([0,0,0])
 
-    const mobileView = () => {
+    useEffect(() => {
+        setEasterEgg(egg)
+    }, [egg])
+
+    useEffect(() => {
+        if (combo[0] === 270 && combo[1] === 90 && combo[2] === 180){
+            changeEggState({
+                eg4: true,
+                h5Active: true,
+                showHint: true,
+                currentHint: 'PREFACE: The last clue will be solved in the Tech section of this website. CLUE 6: If you git me so well then go to where I keep all my stuff, there if you are cleaver you will see what you are looking for.'
+            })
+        }
+    }, [combo])
+
+    const view = () => {
         return (
             <div>
                 <div className='bg-me-primary py-3 text-white font-me-saira text-3xl text-center mt-8'>
@@ -17,22 +35,51 @@ export default function Index() {
                 >
                     {
                         data.map((exp, key) => {
+                            const [expRotate, setExpRotate] = useState(0)
+
+                            const updateRotate = () => {
+                                let num = expRotate + 90
+                                if (num >= 360){
+                                    num = 0
+                                }
+                                    console.log(num);
+                                    setExpRotate(num)
+                                    let tempCombo = [...combo]
+                                    tempCombo[key] = num
+                                    setCombo(tempCombo)
+                                
+                            }
+
                             return (
                                 <motion.div
                                     className='bg-white w-auto border-2 border-black rounded-xl my-2 sm:py-5 sm:m-0 shadow shadow-black h-72 overflow-y-auto flex flex-col'
                                     key={key}
-                                    initial={{ y: -100, opacity: 0}}
-                                    whileInView={{ y: [-100, 0], opacity: 1}}
-                                    transition={{duration: 0.7, delay: key * 0.3}}
+                                    initial={{ y: -100, opacity: 0 }}
+                                    whileInView={{ y: [-100, 0], opacity: 1 }}
+                                    transition={{ duration: 0.7, delay: key * 0.3 }}
                                     viewport={{ once: true }}
                                 >
                                     <h3 className='text-2xl text-center mt-0'>{exp.title}</h3>
-                                    <div className='grid grid-cols-6 place-items-center mx-3 gap-3 m-auto'>
-                                        <div className='col-span-2'>
-                                            <img src={exp.icon} alt={exp.iconAlt} />
+                                    <div className='grid grid-cols-6 place-items-center mx-3 gap-5 m-auto p-3'>
+                                        <div className='relative col-span-2 h-full w-full flex place-items-center m-8'>
+                                            {
+                                                easterEgg && easterEgg.eg3 && !easterEgg.h5Active &&
+                                            <div className='absolute w-full h-full'>
+                                                <span className='absolute top-0 right-1/2'>12</span>
+                                                <span className='absolute top-1/2 right-0'>3</span>
+                                                <span className='absolute bottom-0 right-1/2'>6</span>
+                                                <span className='absolute top-1/2 left-0'>9</span>
+                                            </div>
+                                            }
+                                            <motion.div
+                                                className={cx(`p-3 rotate-${expRotate}`)}
+                                                animate={{ rotate: expRotate }}
+                                            >
+                                                <Image src={exp.icon} alt="" onClick={() => updateRotate()} />
+                                            </motion.div>
                                         </div>
                                         <div className='col-start-3 col-span-4'>
-                                            <p>{exp.description}</p>
+                                            {exp.description}
                                         </div>
                                     </div>
                                 </motion.div>
@@ -44,20 +91,10 @@ export default function Index() {
         )
     }
 
-    const desktopView = () => {
-        return (
-            <div>
-                <div >
-                    <h2>Work Experience</h2>
-                </div>
-            </div>
-        )
-    }
-
     return (
         <div>
             <div>
-                {mobileView()}
+                {view()}
             </div>
         </div>
     )

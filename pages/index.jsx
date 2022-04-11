@@ -18,11 +18,11 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    console.log(easterEgg);
     setEgg(easterEgg)
   }, [easterEgg])
 
   const resetEgg = () => {
+    localStorage.clear()
     let egg = {
       showingPicture: 'visible',
       showingHint: 'hidden',
@@ -57,6 +57,7 @@ export default function Home() {
                 easterEgg.showHint &&
                 <Modal
                   content={easterEgg.currentHint}
+                  title="The Egg Hunt"
                   onClose={() => changeEggState({
                     showHint: false
                   })}
@@ -64,18 +65,28 @@ export default function Home() {
               }
               {
                 easterEgg.eggHunt &&
-                <div>
-                  <button className='p-3 bg-me-accent rounded-lg fixed top-5 left-5' onClick={() => changeEggState({
-                    showHint: true
-                  })}>Current Hint</button>
-                </div>
+                <>
+                  <div className='bg-me-primary fixed top-2 left-2 p-5 z-20 rounded-lg shadow-md shadow-black'>
+                    <button className='p-3 bg-me-accent rounded-lg shadow-md shadow-black' onClick={() => changeEggState({
+                      showHint: true
+                    })}>Current Hint</button>
+                  </div>
+                  <div className='bg-me-primary p-5 fixed top-2 right-3 rounded-lg shadow-lg shadow-black text-white z-20'>
+                    <div className=' cursor-pointer bg-me-secondary p-3 rounded-lg shadow shadow-black'>
+                      <span onClick={() => resetEgg()}>Reset</span>
+                    </div>
+                  </div>
+                </>
               }
               <MainCard
                 egg={easterEgg}
                 resetEgg={() => resetEgg()}
                 changeEggState={(obj) => changeEggState(obj)}
               />
-              <Tech />
+              <Tech
+                egg={easterEgg}
+                changeEggState={(obj) => changeEggState(obj)}
+              />
               <WorkExp
                 egg={easterEgg}
                 changeEggState={(obj) => changeEggState(obj)}

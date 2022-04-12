@@ -1,4 +1,4 @@
-import Dojo from '@/img/DojoIcon.png'
+import Dojo from '@/img/dojoIcon.png'
 import SPH from '@/img/sphIcon.png'
 import Navy from '@/img/navyIcon.png'
 

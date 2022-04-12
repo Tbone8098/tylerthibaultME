@@ -8,13 +8,14 @@ export default function Index(props) {
     const { egg, changeEggState } = props
     const [easterEgg, setEasterEgg] = useState(egg)
     const [combo, setCombo] = useState([0,0,0])
+    const [expRotate, setExpRotate] = useState([0,0,0])
 
     useEffect(() => {
         setEasterEgg(egg)
     }, [egg])
 
     useEffect(() => {
-        if (combo[0] === 270 && combo[1] === 90 && combo[2] === 180){
+        if (expRotate[0] === 270 && expRotate[1] === 90 && expRotate[2] === 180){
             changeEggState({
                 eg4: true,
                 h5Active: true,
@@ -22,7 +23,17 @@ export default function Index(props) {
                 currentHint: 'PREFACE: The last clue will be solved in the Tech section of this website. CLUE 6: If you git me so well then go to where I keep all my stuff, there if you are cleaver you will see what you are looking for.'
             })
         }
-    }, [combo])
+    }, [expRotate])
+
+    const updateRotate = (idx) => {
+        let num = expRotate[idx] + 90
+        if (num >= 360){
+            num = 0
+        }
+        let temp = [...expRotate]
+        temp[idx] = num
+        setExpRotate(temp)
+    }
 
     const view = () => {
         return (
@@ -35,20 +46,6 @@ export default function Index(props) {
                 >
                     {
                         data.map((exp, key) => {
-                            const [expRotate, setExpRotate] = useState(0)
-
-                            const updateRotate = () => {
-                                let num = expRotate + 90
-                                if (num >= 360){
-                                    num = 0
-                                }
-                                    console.log(num);
-                                    setExpRotate(num)
-                                    let tempCombo = [...combo]
-                                    tempCombo[key] = num
-                                    setCombo(tempCombo)
-                                
-                            }
 
                             return (
                                 <motion.div
@@ -72,10 +69,10 @@ export default function Index(props) {
                                             </div>
                                             }
                                             <motion.div
-                                                className={cx(`p-3 rotate-${expRotate}`)}
-                                                animate={{ rotate: expRotate }}
+                                                className={cx(`p-3 rotate-${expRotate[key]}`)}
+                                                animate={{ rotate: expRotate[key] }}
                                             >
-                                                <Image src={exp.icon} alt="" onClick={() => updateRotate()} />
+                                                <Image src={exp.icon} alt="" onClick={() => updateRotate(key)} />
                                             </motion.div>
                                         </div>
                                         <div className='col-start-3 col-span-4'>

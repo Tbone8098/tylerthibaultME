@@ -40,7 +40,7 @@ export default function Index(props) {
                 {
                     data.map((svg, key) => {
                         return (
-                            <div onClick={() => updateCode(key + 1)}>
+                            <div key={key} onClick={() => updateCode(key + 1)}>
                                 <SvgIcon
                                     key={key}
                                     text={svg.name}
